@@ -52,7 +52,6 @@ map("n", "<C-Down>", "<C-w>-", { desc = "resize lower window" })
 
 -- Open terminal with different splits
 map("n", "<A-h>", "<CMD>ToggleTerm direction=horizontal<CR>", { desc = "horizontal terminal" })
-map("n", "<A-v>", "<CMD>ToggleTerm direction=vertical<CR>", { desc = "vertical terminal" })
 map("n", "<A-i>", "<CMD>ToggleTerm<CR>", { desc = "open terminal" })
 
 -- ========================
@@ -79,15 +78,6 @@ map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 -- Toggle comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
-
--- ========================
--- NvimTree Mappings
--- ========================
-
--- Toggle NvimTree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "toggle NvimTree" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "focus NvimTree" })
-
 -- ========================
 -- Telescope Mappings
 -- ========================
@@ -107,7 +97,29 @@ map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "pick hidden term" }
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "find files" })
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", { desc = "find all files" })
 
+-- Moving around lines
+map("n", "<C-b>", "<ESC>^", { desc = "beginning of current line" })
+map("n", "<C-e>", "<End>", { desc = "end of current line" })
+
 -- ========================
--- WhichKey Mappings
+-- Buffer Nav 
 -- ========================
+map("n", "<leader>g1", "<cmd>BufferGoto 1<cr>", { desc = "goto buffer 1" })
+map("n", "<leader>g2", "<cmd>BufferGoto 2<cr>", { desc = "goto buffer 2" })
+map("n", "<leader>g3", "<cmd>BufferGoto 3<cr>", { desc = "goto buffer 3" })
+map("n", "<leader>g4", "<cmd>BufferGoto 4<cr>", { desc = "goto buffer 4" })
+map("n", "<leader>g5", "<cmd>BufferGoto 5<cr>", { desc = "goto buffer 5" })
+map("n", "<leader>g6", "<cmd>BufferGoto 6<cr>", { desc = "goto buffer 6" })
+map("n", "<leader>g7", "<cmd>BufferGoto 7<cr>", { desc = "goto buffer 7" })
+map("n", "<leader>g8", "<cmd>BufferGoto 8<cr>", { desc = "goto buffer 8" })
+map("n", "<leader>g9", "<cmd>BufferGoto 9<cr>", { desc = "goto buffer 9" })
+map("n", "<leader>g0", "<cmd>BufferGoto 0<cr>", { desc = "goto buffer 0" })
+
+-- quick keys for previous/next
+map("n", "<leader>sb", "<cmd>BufferMovePrevious<cr>", { desc = "move to previous buffer" })
+map("n", "<leader>mn", "<cmd>BufferMoveNext<cr>", { desc = "move buffer" })
+
+map("n", "<leader><TAB>n", "<cmd>BufferPrevious<cr>", { desc = "goto buffer previous" })
+map("n", "<leader><TAB>", "<cmd>BufferNext<cr>", { desc = "goto next buffer" })
+
 
