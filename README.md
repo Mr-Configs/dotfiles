@@ -40,5 +40,34 @@ map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "pick hidden term" }
 ## Nothing Like Good Old Emacs
 ![Screenshot From 2025-02-18 00-05-08](https://github.com/user-attachments/assets/12afc0c9-a81e-4421-9177-9bef8f5c52e3)
 
-![Screenshot From 2025-02-18 00-28-00](https://github.com/user-attachments/assets/05d49119-9cd9-48eb-8e2d-f51099351b72)
+![Screenshot From 2025-02-18 00-54-22](https://github.com/user-attachments/assets/958824d0-07d9-45bb-99b1-92faaa09112f)
 
+```lisp
+(global-set-key (kbd "C-c e") 'eval-buffer)
+
+;;; Copy Entire File Function
+(defun copy-entire-buffer ()
+  "Copy the entire buffer to the clipboard."
+  (interactive)
+  (kill-ring-save (point-min) (point-max))
+  (message "Buffer copied to clipboard."))
+
+(global-set-key (kbd "C-c C-a") 'copy-entire-buffer)
+
+
+;;; Terminal Toggle Function
+(defun toggle-term ()
+  "Toggle term in a horizontal split."
+  (interactive)
+  (if (get-buffer "*terminal*")
+      (if (eq (current-buffer) (get-buffer "*terminal*"))
+          (delete-window)
+        (switch-to-buffer-other-window "*terminal*"))
+    (progn
+      (split-window-below)
+      (other-window 1)
+      (term "/bin/bash")
+      (rename-buffer "*terminal*"))))
+
+(global-set-key (kbd "C-c t") 'toggle-term)
+```
