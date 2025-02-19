@@ -40,6 +40,10 @@ map("n", "<C-l>", "<C-w>l", { desc = "move to right window" })
 map("n", "<C-k>", "<C-w>k", { desc = "move to upper window" })
 map("n", "<C-j>", "<C-w>j", { desc = "move to lower window" })
 
+-- Jump around
+map("n", "zz", "]m", { desc = "jump to }" })
+map("n", "zx", "[m", { desc = "jump to {" })
+
 -- Resize Windows
 map("n", "<C-Left>", "<C-w><", { desc = "resize left window" })
 map("n", "<C-Right>", "<C-w>>", { desc = "resize right window" })
@@ -64,7 +68,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "clear search highlight" })
 -- Save file
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 
--- Copy whole file and copy 
+-- Copy whole file and copy
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "copy whole file" })
 
 -- Toggle line number
@@ -102,7 +106,7 @@ map("n", "<C-b>", "<ESC>^", { desc = "beginning of current line" })
 map("n", "<C-e>", "<End>", { desc = "end of current line" })
 
 -- ========================
--- Buffer Nav 
+-- Buffer Nav
 -- ========================
 map("n", "<leader>g1", "<cmd>BufferGoto 1<cr>", { desc = "goto buffer 1" })
 map("n", "<leader>g2", "<cmd>BufferGoto 2<cr>", { desc = "goto buffer 2" })
@@ -121,5 +125,3 @@ map("n", "<leader>mn", "<cmd>BufferMoveNext<cr>", { desc = "move buffer" })
 
 map("n", "<leader><TAB>n", "<cmd>BufferPrevious<cr>", { desc = "goto buffer previous" })
 map("n", "<leader><TAB>", "<cmd>BufferNext<cr>", { desc = "goto next buffer" })
-
-
