@@ -67,6 +67,43 @@
 (add-hook 'scheme-mode-hook      'rc/turn-on-paredit)
 (add-hook 'racket-mode-hook      'rc/turn-on-paredit)
 
+;; ;; Custom
+;; (global-set-key (kbd "C-c e") 'eval-buffer)
+
+;;; Copy Entire File Function
+(defun copy-entire-buffer ()
+  "Copy the entire buffer to the clipboard."
+  (interactive)
+  (kill-ring-save (point-min) (point-max))
+  (message "Buffer copied to clipboard."))
+
+(global-set-key (kbd "C-c C-a") 'copy-entire-buffer)
+
+
+;;; Terminal Toggle Function
+(defun toggle-term ()
+  "Toggle term on and off the screen."
+  (interactive)
+  (let ((term-buffer "*terminal*"))
+    (if (get-buffer term-buffer)
+        (if (get-buffer-window term-buffer)
+            (delete-window (get-buffer-window term-buffer))
+          (pop-to-buffer term-buffer))
+      (let ((win (split-window-below)))
+        (select-window win)
+        (term "/usr/bin/fish")
+        (rename-buffer term-buffer)))))
+
+(defun close-term ()
+  "Close the terminal buffer."
+  (interactive)
+  (let ((term-buffer "*terminal*"))
+    (when (get-buffer term-buffer)
+      (kill-buffer term-buffer))))
+
+(global-set-key (kbd "C-c t") 'toggle-term)
+(global-set-key (kbd "C-c q") 'close-term)
+
 ;;; Emacs lisp
 (add-hook 'emacs-lisp-mode-hook
           '(lambda ()
