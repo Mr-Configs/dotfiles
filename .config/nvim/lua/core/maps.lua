@@ -31,24 +31,20 @@ map("n", "<leader>r", "<CMD>Neotree focus<CR>", { desc = "focus NeoTree" })
 -- ========================
 
 -- Split windows
-map("n", "<leader>o", "<CMD>vsplit<CR>", { desc = "vertical split" })
-map("n", "<leader>p", "<CMD>split<CR>", { desc = "horizontal split" })
+map("n", "<leader>v", "<CMD>vsplit<CR>", { desc = "vertical split" })
+map("n", "<leader>h", "<CMD>split<CR>", { desc = "horizontal split" })
 
 -- Window Navigation
-map("n", "<C-h>", "<C-w>h", { desc = "move to left window" })
-map("n", "<C-l>", "<C-w>l", { desc = "move to right window" })
-map("n", "<C-k>", "<C-w>k", { desc = "move to upper window" })
-map("n", "<C-j>", "<C-w>j", { desc = "move to lower window" })
+map("n", "<C-Left>", "<C-w>h", { desc = "move to left window" })
+map("n", "<C-Right>", "<C-w>l", { desc = "move to right window" })
+map("n", "<C-l>", "<C-w>k", { desc = "move to upper window" })
+map("n", "<C-k>", "<C-w>j", { desc = "move to lower window" })
 
 -- Jump around
 map("n", "zz", "]m", { desc = "jump to }" })
 map("n", "zx", "[m", { desc = "jump to {" })
-
--- Resize Windows
-map("n", "<C-Left>", "<C-w><", { desc = "resize left window" })
-map("n", "<C-Right>", "<C-w>>", { desc = "resize right window" })
-map("n", "<C-Up>", "<C-w>+", { desc = "resize upper window" })
-map("n", "<C-Down>", "<C-w>-", { desc = "resize lower window" })
+map("n", "<C-Up>", "<C-b>", { desc = "jump jump!" })
+map("n", "<C-Down>", "<C-f>", { desc = "jump jump!" })
 
 -- ========================
 -- Terminal Mappings
@@ -108,16 +104,16 @@ map("n", "<C-e>", "<End>", { desc = "end of current line" })
 -- ========================
 -- Buffer Nav
 -- ========================
-map("n", "<leader>g1", "<cmd>BufferGoto 1<cr>", { desc = "goto buffer 1" })
-map("n", "<leader>g2", "<cmd>BufferGoto 2<cr>", { desc = "goto buffer 2" })
-map("n", "<leader>g3", "<cmd>BufferGoto 3<cr>", { desc = "goto buffer 3" })
-map("n", "<leader>g4", "<cmd>BufferGoto 4<cr>", { desc = "goto buffer 4" })
-map("n", "<leader>g5", "<cmd>BufferGoto 5<cr>", { desc = "goto buffer 5" })
-map("n", "<leader>g6", "<cmd>BufferGoto 6<cr>", { desc = "goto buffer 6" })
-map("n", "<leader>g7", "<cmd>BufferGoto 7<cr>", { desc = "goto buffer 7" })
-map("n", "<leader>g8", "<cmd>BufferGoto 8<cr>", { desc = "goto buffer 8" })
-map("n", "<leader>g9", "<cmd>BufferGoto 9<cr>", { desc = "goto buffer 9" })
-map("n", "<leader>g0", "<cmd>BufferGoto 0<cr>", { desc = "goto buffer 0" })
+map("n", "<leader>1", "<cmd>BufferGoto 1<cr>", { desc = "goto buffer 1" })
+map("n", "<leader>2", "<cmd>BufferGoto 2<cr>", { desc = "goto buffer 2" })
+map("n", "<leader>3", "<cmd>BufferGoto 3<cr>", { desc = "goto buffer 3" })
+map("n", "<leader>4", "<cmd>BufferGoto 4<cr>", { desc = "goto buffer 4" })
+map("n", "<leader>5", "<cmd>BufferGoto 5<cr>", { desc = "goto buffer 5" })
+map("n", "<leader>6", "<cmd>BufferGoto 6<cr>", { desc = "goto buffer 6" })
+map("n", "<leader>7", "<cmd>BufferGoto 7<cr>", { desc = "goto buffer 7" })
+map("n", "<leader>8", "<cmd>BufferGoto 8<cr>", { desc = "goto buffer 8" })
+map("n", "<leader>9", "<cmd>BufferGoto 9<cr>", { desc = "goto buffer 9" })
+map("n", "<leader>0", "<cmd>BufferGoto 0<cr>", { desc = "goto buffer 0" })
 
 -- quick keys for previous/next
 map("n", "<leader>sb", "<cmd>BufferMovePrevious<cr>", { desc = "move to previous buffer" })
